@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from "react-native"
+import { Platform, StyleSheet, Text } from "react-native"
 
 import Colors from "../../constants/Colors"
 import React from "react"
@@ -13,12 +13,14 @@ const styles = StyleSheet.create({
         fontSize: 26,
         color: Colors.accent500,
         textAlign: 'center',
-        borderWidth: 3,
+        // borderWidth: Platform.OS === 'android' ? 3 : 0,
+        borderWidth: Platform.select({ ios: 0, android: 2 }),
         borderColor: Colors.accent500,
-        borderRadius:20,
+        borderRadius: 20,
         padding: 10,
         textAlignVertical: 'center',
-        fontFamily:'OpenSans-Bold'
+        fontFamily: 'OpenSans-Bold',
+        maxWidth: '80%',
     }
 })
 

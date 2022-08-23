@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet } from 'react-native';
+import { ImageBackground, StatusBar, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 
 import Colors from './constants/Colors';
@@ -30,17 +30,22 @@ const App = () => {
     onStartNewGame={startnewGameHandler}
   />
 
-  return (<LinearGradient
-    colors={[Colors.primary800, Colors.accent500]}
-    style={styles.rootScreen}>
-    <ImageBackground
-      source={require('./assets/images/dices.jpg')}
-      resizeMode="cover"
-      style={styles.rootScreen}
-      imageStyle={styles.imageBackground}>
-      {screen}
-    </ImageBackground>
-  </LinearGradient>)
+  return (
+    <>
+      <StatusBar backgroundColor={Colors.primary500} barStyle='dark-content'/>
+      <LinearGradient
+        colors={[Colors.primary800, Colors.accent500]}
+        style={styles.rootScreen}>
+        <ImageBackground
+          source={require('./assets/images/dices.jpg')}
+          resizeMode="cover"
+          style={styles.rootScreen}
+          imageStyle={styles.imageBackground}>
+          {screen}
+        </ImageBackground>
+      </LinearGradient>
+    </>
+  )
 };
 
 const styles = StyleSheet.create({

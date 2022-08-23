@@ -1,4 +1,5 @@
 {
   "name": "MiniGame",
-  "displayName": "MiniGame"
+  "displayName": "MiniGame",
+  "orientation": "default"
 }
